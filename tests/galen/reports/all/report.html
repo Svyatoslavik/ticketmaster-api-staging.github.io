@@ -1,0 +1,162 @@
+<html>
+    <head>
+        <title>Galen Reports</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="report.css"></link>
+        <link rel="stylesheet" type="text/css" href="tablesorter.css"></link>
+        <script src="jquery-1.11.2.min.js"></script>
+        <script src="handlebars-v2.0.0.js"></script>
+        <script src="tablesorter.js"></script>
+        <script src="galen-report.js"></script>
+        <script>
+var reportData = {
+  "tests" : [ {
+    "name" : "Home page on desktop",
+    "startedAt" : 1493903558855,
+    "endedAt" : 1493903560265,
+    "failed" : true,
+    "statistic" : {
+      "passed" : 0,
+      "errors" : 1,
+      "warnings" : 0,
+      "total" : 1
+    },
+    "testId" : "1-home-page-on-desktop",
+    "duration" : 1410,
+    "groups" : [ "HomePage" ],
+    "failed" : true,
+    "exceptionMessage" : "SessionNotCreatedException: Unable to create new remote session. desired capabilities = Capabilities [{marionette=true, browserName=firefox, moz:firefoxOptions={binary=Optional.empty, args=[], legacy=null, logLevel=null, prefs={}, profile=null}, version=, platform=ANY}], required capabilities = Capabilities [{moz:firefoxOptions={binary=Optional.empty, args=[], legacy=null, logLevel=null, prefs={}, profile=null}}]\nBuild info: version: 'unknown', revision: 'unknown', time: 'unknown'\nSystem info: host: 'testing-docker-54b4f484-4a02-43d1-9759-7cc00cb53bd4', ip: '172.17.0.15', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.12-040812-generic', java.version: '1.8.0_31'\nDriver info: driver.version: FirefoxDriver",
+    "exceptionStacktrace" : "org.openqa.selenium.SessionNotCreatedException: Unable to create new remote session. desired capabilities = Capabilities [{marionette=true, browserName=firefox, moz:firefoxOptions={binary=Optional.empty, args=[], legacy=null, logLevel=null, prefs={}, profile=null}, version=, platform=ANY}], required capabilities = Capabilities [{moz:firefoxOptions={binary=Optional.empty, args=[], legacy=null, logLevel=null, prefs={}, profile=null}}]\nBuild info: version: 'unknown', revision: 'unknown', time: 'unknown'\nSystem info: host: 'testing-docker-54b4f484-4a02-43d1-9759-7cc00cb53bd4', ip: '172.17.0.15', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.12-040812-generic', java.version: '1.8.0_31'\nDriver info: driver.version: FirefoxDriver\n\tat org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:141)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:604)\n\tat org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:244)\n\tat org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:131)\n\tat org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:218)\n\tat org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:125)\n\tat org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:150)\n\tat com.galenframework.browser.SeleniumBrowserFactory.getDriver(SeleniumBrowserFactory.java:95)\n\tat com.galenframework.browser.SeleniumBrowserFactory.createLocalBrowser(SeleniumBrowserFactory.java:89)\n\tat com.galenframework.browser.SeleniumBrowserFactory.openBrowser(SeleniumBrowserFactory.java:65)\n\tat com.galenframework.runner.GalenBasicTestRunner.runTest(GalenBasicTestRunner.java:73)\n\tat com.galenframework.tests.GalenBasicTest.execute(GalenBasicTest.java:55)\n\tat com.galenframework.TestRunnable.runTest(TestRunnable.java:75)\n\tat com.galenframework.TestRunnable.run(TestRunnable.java:101)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n\tat java.lang.Thread.run(Thread.java:745)\n"
+  }, {
+    "name" : "Home page on tablet",
+    "startedAt" : 1493903560265,
+    "endedAt" : 1493903560832,
+    "failed" : true,
+    "statistic" : {
+      "passed" : 0,
+      "errors" : 1,
+      "warnings" : 0,
+      "total" : 1
+    },
+    "testId" : "2-home-page-on-tablet",
+    "duration" : 567,
+    "groups" : [ "HomePage" ],
+    "failed" : true,
+    "exceptionMessage" : "SessionNotCreatedException: Unable to create new remote session. desired capabilities = Capabilities [{marionette=true, browserName=firefox, moz:firefoxOptions={binary=Optional.empty, args=[], legacy=null, logLevel=null, prefs={}, profile=null}, version=, platform=ANY}], required capabilities = Capabilities [{moz:firefoxOptions={binary=Optional.empty, args=[], legacy=null, logLevel=null, prefs={}, profile=null}}]\nBuild info: version: 'unknown', revision: 'unknown', time: 'unknown'\nSystem info: host: 'testing-docker-54b4f484-4a02-43d1-9759-7cc00cb53bd4', ip: '172.17.0.15', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.12-040812-generic', java.version: '1.8.0_31'\nDriver info: driver.version: FirefoxDriver",
+    "exceptionStacktrace" : "org.openqa.selenium.SessionNotCreatedException: Unable to create new remote session. desired capabilities = Capabilities [{marionette=true, browserName=firefox, moz:firefoxOptions={binary=Optional.empty, args=[], legacy=null, logLevel=null, prefs={}, profile=null}, version=, platform=ANY}], required capabilities = Capabilities [{moz:firefoxOptions={binary=Optional.empty, args=[], legacy=null, logLevel=null, prefs={}, profile=null}}]\nBuild info: version: 'unknown', revision: 'unknown', time: 'unknown'\nSystem info: host: 'testing-docker-54b4f484-4a02-43d1-9759-7cc00cb53bd4', ip: '172.17.0.15', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.12-040812-generic', java.version: '1.8.0_31'\nDriver info: driver.version: FirefoxDriver\n\tat org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:141)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:604)\n\tat org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:244)\n\tat org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:131)\n\tat org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:218)\n\tat org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:125)\n\tat org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:150)\n\tat com.galenframework.browser.SeleniumBrowserFactory.getDriver(SeleniumBrowserFactory.java:95)\n\tat com.galenframework.browser.SeleniumBrowserFactory.createLocalBrowser(SeleniumBrowserFactory.java:89)\n\tat com.galenframework.browser.SeleniumBrowserFactory.openBrowser(SeleniumBrowserFactory.java:65)\n\tat com.galenframework.runner.GalenBasicTestRunner.runTest(GalenBasicTestRunner.java:73)\n\tat com.galenframework.tests.GalenBasicTest.execute(GalenBasicTest.java:55)\n\tat com.galenframework.TestRunnable.runTest(TestRunnable.java:75)\n\tat com.galenframework.TestRunnable.run(TestRunnable.java:101)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n\tat java.lang.Thread.run(Thread.java:745)\n"
+  }, {
+    "name" : "Home page on mobile",
+    "startedAt" : 1493903560832,
+    "endedAt" : 1493903561321,
+    "failed" : true,
+    "statistic" : {
+      "passed" : 0,
+      "errors" : 1,
+      "warnings" : 0,
+      "total" : 1
+    },
+    "testId" : "3-home-page-on-mobile",
+    "duration" : 489,
+    "groups" : [ "HomePage" ],
+    "failed" : true,
+    "exceptionMessage" : "SessionNotCreatedException: Unable to create new remote session. desired capabilities = Capabilities [{marionette=true, browserName=firefox, moz:firefoxOptions={binary=Optional.empty, args=[], legacy=null, logLevel=null, prefs={}, profile=null}, version=, platform=ANY}], required capabilities = Capabilities [{moz:firefoxOptions={binary=Optional.empty, args=[], legacy=null, logLevel=null, prefs={}, profile=null}}]\nBuild info: version: 'unknown', revision: 'unknown', time: 'unknown'\nSystem info: host: 'testing-docker-54b4f484-4a02-43d1-9759-7cc00cb53bd4', ip: '172.17.0.15', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.12-040812-generic', java.version: '1.8.0_31'\nDriver info: driver.version: FirefoxDriver",
+    "exceptionStacktrace" : "org.openqa.selenium.SessionNotCreatedException: Unable to create new remote session. desired capabilities = Capabilities [{marionette=true, browserName=firefox, moz:firefoxOptions={binary=Optional.empty, args=[], legacy=null, logLevel=null, prefs={}, profile=null}, version=, platform=ANY}], required capabilities = Capabilities [{moz:firefoxOptions={binary=Optional.empty, args=[], legacy=null, logLevel=null, prefs={}, profile=null}}]\nBuild info: version: 'unknown', revision: 'unknown', time: 'unknown'\nSystem info: host: 'testing-docker-54b4f484-4a02-43d1-9759-7cc00cb53bd4', ip: '172.17.0.15', os.name: 'Linux', os.arch: 'amd64', os.version: '4.8.12-040812-generic', java.version: '1.8.0_31'\nDriver info: driver.version: FirefoxDriver\n\tat org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:141)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:604)\n\tat org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:244)\n\tat org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:131)\n\tat org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:218)\n\tat org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:125)\n\tat org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:150)\n\tat com.galenframework.browser.SeleniumBrowserFactory.getDriver(SeleniumBrowserFactory.java:95)\n\tat com.galenframework.browser.SeleniumBrowserFactory.createLocalBrowser(SeleniumBrowserFactory.java:89)\n\tat com.galenframework.browser.SeleniumBrowserFactory.openBrowser(SeleniumBrowserFactory.java:65)\n\tat com.galenframework.runner.GalenBasicTestRunner.runTest(GalenBasicTestRunner.java:73)\n\tat com.galenframework.tests.GalenBasicTest.execute(GalenBasicTest.java:55)\n\tat com.galenframework.TestRunnable.runTest(TestRunnable.java:75)\n\tat com.galenframework.TestRunnable.run(TestRunnable.java:101)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n\tat java.lang.Thread.run(Thread.java:745)\n"
+  } ]
+};
+
+        </script>
+        <script>
+            $(function () {
+                var galenReport = createGalenTestOverview();
+                galenReport.renderTestsTable("tests-table", reportData);
+                galenReport.renderGroupsTable("groups-table", reportData);
+
+                window.onhashchange = function () {
+                    galenReport.handleHash(window.location.hash.substr(1));
+                };
+
+                galenReport.handleHash(window.location.hash.substr(1));
+            });
+        </script>
+    </head>
+    <body>
+
+
+        <div class="tests-overview">
+            <h2>Galen Test Report</h2>
+            <div class="tabs">
+                <a class="tab tab-tests" href="#tests">Tests</a>
+                <a class="tab tab-groups" href="#groups">Groups</a>
+            </div>
+            <div id="tests-table">
+            </div>
+            <div id="groups-table">
+            </div>
+
+            <script id="tests-table-tpl" type="text/x-handlebars-template">
+                <table class="tests tablesorter">
+                    <thead>
+                        <tr>
+                            <th>Test</th>
+                            <th>Passed</th>
+                            <th>Failed</th>
+                            <th>Warnings</th>
+                            <th>Total</th>
+                            <th>Groups</th>
+                            <th>Started</th>
+                            <th>Duration</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each tests}}
+                        <tr data-groups="{{groups}}">
+                            <td class="suite-link">
+                                <a href="{{testId}}.html">{{name}}</a>
+                            </td>
+                            <td class="status passed">{{statistic.passed}}</td>
+                            <td class="status failed">{{statistic.errors}}</td>
+                            <td class="status warnings">{{statistic.warnings}}</td>
+                            <td class="status total">{{statistic.total}}</td>
+                            <td class="tags">{{formatGroupsPretty groups}}</td>
+                            <td class="time">{{formatDateTime startedAt}}</td>
+                            <td class="time">{{formatDurationHumanReadable duration}}</td>
+                            <td class="progressbar">
+                                {{renderProgressBar statistic}}
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </script>
+            <script id="groups-table-tpl" type="text/x-handlebars-template">
+                <table class="groups tablesorter">
+                    <thead>
+                        <tr>
+                            <th>Group</th>
+                            <th>Passed</th>
+                            <th>Failed</th>
+                            <th>Tests</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each this}}
+                        <tr>
+                            <td class="group-link">
+                                <a href="#tests|grouped|{{name}}">{{name}}</a>
+                            </td>
+                            <td class="status passed">{{passed}}</td>
+                            <td class="status failed">{{failed}}</td>
+                            <td class="status total">{{tests}}</td>
+                            <td class="progressbar">
+                                {{renderGroupsProgressBar this}}
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </script>
+        </div>
+    </body>
+</html>
