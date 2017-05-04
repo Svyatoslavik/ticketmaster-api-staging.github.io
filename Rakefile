@@ -55,13 +55,24 @@ namespace 'travis' do
       end
       next
     end
-      
+
     
     repo = %x(git config remote.origin.url).gsub(/^git:/, 'https:')
     system "git remote set-url --push origin #{repo}"
     system 'git config credential.helper "store --file=.git/credentials"'
     File.open('.git/credentials', 'w') do |f|
       f.write("https://#{ENV['GH_TOKEN']}:x-oauth-basic@github.com")
+    end
+
+    system 'npm run build'
+    status = system 'git status --porcelain'
+    if status != ''
+      system 'git add .'
+      system 'git commit -m "TRAVIS BUILD COMMIT"'
+      build_commit = system "git push origin #{SOURCE_BRANCH}"
+      puts "Build commit: #{build_commit}"
+      File.delete '.git/credentials'
+      exit 0
     end
 
     puts "Deploying from #{SOURCE_BRANCH} to #{DEPLOY_BRANCH}"
