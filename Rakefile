@@ -66,14 +66,14 @@ namespace 'travis' do
 
     system 'npm run build'
     status = system 'git status --porcelain'
-    if status != ''
-      system 'git add .'
-      system 'git commit -m "TRAVIS BUILD COMMIT"'
-      build_commit = system "git push origin #{SOURCE_BRANCH}"
-      puts "Build commit: #{build_commit}"
-      File.delete '.git/credentials'
-      exit 0
-    end
+    #if status != ''
+    system 'git add .'
+    system 'git commit -m "TRAVIS BUILD COMMIT"'
+    build_commit = system "git push origin #{SOURCE_BRANCH}"
+    puts "++++ Build commit: #{build_commit}"
+    #File.delete '.git/credentials'
+    #exit 0
+    #end
 
     puts "Deploying from #{SOURCE_BRANCH} to #{DEPLOY_BRANCH}"
     deployed = system "git push origin #{SOURCE_BRANCH}:#{DEPLOY_BRANCH}"
