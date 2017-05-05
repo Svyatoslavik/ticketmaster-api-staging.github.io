@@ -15,7 +15,7 @@ class RestService {
 			instance = this;
 		}
 		this.base = base;
-		this.base.some = 5;
+		this.base.some = 6;
 		this.apiKey = apikey;
 		this.selectedCategory = ko.observable('').subscribeTo('SELECTED_CATEGORY');
 		this.selectedMethodType = ko.observable('').subscribeTo('SELECTED_METHOD_TYPE');
