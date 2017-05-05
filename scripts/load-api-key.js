@@ -1,6 +1,8 @@
 /**
  * Show email if user logged
  */
+
+ 
 (function(){
   //get Cookie by name
   function getCookie(cname) {
