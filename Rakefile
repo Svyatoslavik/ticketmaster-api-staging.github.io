@@ -68,7 +68,7 @@ namespace 'travis' do
     status_api_json_updated = `git show --name-only --pretty=format:%N HEAD | grep '_data/orgs'`
     status_api_expoloer_v2_updated = `git show --name-only --pretty=format:%N HEAD | grep 'scripts/api-explorer/v2/'`
     
-    if status_api_json_updated != '' && status_api_expoloer_v2_updated !=''
+    if status_api_json_updated != '' || status_api_expoloer_v2_updated !=''
       puts "Last commit has changes in swagger .json files or in API Exploerer V2"
       system 'npm install'
       system 'npm run build'
