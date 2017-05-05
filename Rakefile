@@ -42,7 +42,6 @@ namespace 'travis' do
 
   desc 'Publish site to GitHub Pages from Travis'
   task :deploy do
-    puts "+++++++++++++++++++++++++++++++++++++++++++++++"
 
     if ENV['TRAVIS_TEST_RESULT'].to_i != 0
       puts "Skipping deployment due to test failure"
@@ -65,15 +64,23 @@ namespace 'travis' do
       f.write("https://#{ENV['GH_TOKEN']}:x-oauth-basic@github.com")
     end
 
-    system 'npm run build'
-    status = system 'git status --porcelain'
-    if status != ''
-      system 'git add .'
-      system 'git commit -m "TRAVIS BUILD COMMIT"'
-      build_commit = system "git push origin #{SOURCE_BRANCH}"
-      puts "Build commit: #{build_commit}"
-      File.delete '.git/credentials'
-      exit 0
+    
+    status_api_json_updated = `git show --name-only --pretty=format:%N HEAD | grep '_data/orgs'`
+    status_api_expoloer_v2_updated = `git show --name-only --pretty=format:%N HEAD | grep 'scripts/api-explorer/v2/'`
+    
+    if status_api_json_updated != '' && status_api_expoloer_v2_updated !=''
+      puts "Last commit has changes in swagger .json files or in API Exploerer V2"
+      system 'npm install'
+      system 'npm run build'
+      status = `git status --porcelain`
+      if status != ''
+        system 'git add .'
+        system 'git commit -m "TRAVIS BUILD COMMIT"'
+        build_commit = system "git push origin #{SOURCE_BRANCH}"
+        puts "Build commit: #{build_commit}"
+        File.delete '.git/credentials'
+        exit 0
+      end
     end
 
     puts "Deploying from #{SOURCE_BRANCH} to #{DEPLOY_BRANCH}"
