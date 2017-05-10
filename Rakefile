@@ -76,8 +76,8 @@ namespace 'travis' do
       status = `git status --porcelain`
       if status != ''
         puts "Files changed: \n#{status}"
-        system "git config --global user.email 'de.gratnik@gmail.com'"
-        system "git config --global user.name 'degratnik' "
+        system "git config --global user.email 'svyatoslavik@gmail.com'"
+        system "git config --global user.name 'sviatoslavik' "
         system "git config --global push.default current"
         system 'git add --all'
         system 'git commit -m "TRAVIS BUILD COMMIT"'
